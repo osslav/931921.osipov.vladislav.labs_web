@@ -1,0 +1,64 @@
+*
+{
+	margin: 0px;
+	font-family: Arial;
+}
+
+body
+{
+	width: 900px;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.buttonBlock > button
+{	
+	background: red;
+	color: white;
+	font-size: 26px;
+
+	height: 55px;
+	width: 33.33%;
+	
+	border: 2px solid black;
+
+	margin: 0px;
+	margin-left: 0px;
+}
+
+.contentBlock
+{
+	display: flex;
+	height: 500px;
+}
+
+.columnLeft
+{
+	width: 99%;
+	padding: 20px;
+	background-color: blue;
+}
+
+.columnLeft > img
+{
+	width: 600px;
+	height: 355px;
+}
+
+.columnRight 
+{
+	width: 1%;
+	padding: 20px;
+	background-color: green;
+}
+
+.columnRight > img
+{
+	visibility: hidden;
+	width: 600px;
+	height: 355px;
+}
+
+
+
