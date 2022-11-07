@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Task 8</title>
+        <link rel="stylesheet" href="lab.css">
+    </head>
+    <body>
+        <div class="tableBlock">
+            <div class="tableElem" id="0">
+                <input type="text"><!--
+                --><input type="number"><!--
+
+                --><button onclick="upElem(this.value.replace(' up', ''))" value="0 up">↑</button><!--
+                --><button onclick="downElem(this.value.replace(' down', ''))" value="0 down">↓</button><!--
+                --><button onclick="delElem(this.value.replace(' del', ''))" value="0 del">x</button>
+            </div>
+        </div>
+        
+        <div class="buttonBlock">
+            <button onclick="createNew()">Добавить элемент</button><br>
+            <button onclick="printRes()">Сохранить</button>
+        </div>
+
+        <p></p>
+
+		<script src="lab.js"></script>
+    </body>
+</html>
