@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Task 8</title>
+        <link rel="stylesheet" href="lab.css">
+    </head>
+    <body>
+        <div class="calculateBlock">
+			<table>
+				<tr>
+				<td colspan="5"><input type="text" id="outputLine"></td>
+				</tr>
+				
+				<tr>
+				<td><button onclick="addNum(7)">7</button></td>
+				<td><button onclick="addNum(8)">8</button></td>
+				<td><button onclick="addNum(9)">9</button></td>
+				<td><button onclick="addOperation('/')">/</button></td>
+				<td><button onclick="clearLine()" value="0 del">С</button></td>					
+				<tr>
+					
+				<tr>
+				<td><button onclick="addNum(4)">4</button></td>
+				<td><button onclick="addNum(5)">5</button></td>
+				<td><button onclick="addNum(6)">6</button></td>
+				<td><button onclick="addOperation('*')">*</button></td>
+				<td><button onclick="backspace()">←</button></td>
+				</tr>
+					
+				<tr>
+				<td><button onclick="addNum(1)">1</button></td>
+				<td><button onclick="addNum(2)">2</button></td>
+				<td><button onclick="addNum(3)">3</button></td>
+				<td><button onclick="addOperation('-')" value="0 del">-</button></td>
+				<td rowspan="2"><button onclick="calculate()">=</button></td>
+				</tr>
+					
+				<tr>
+				<td colspan="2"><button onclick="addNum(0)">0</button></td>
+				<td><button onclick="addPoint()">.</button></td>
+				<td><button onclick="addOperation('+')">+</button></td>
+				</tr>
+			</table>
+        </div>
+
+		<script src="lab.js"></script>
+    </body>
+</html>
