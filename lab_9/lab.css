@@ -1,12 +1,60 @@
-button
+*
+{
+	font-size: 30px;
+	font-family: Arial;
+	margin: 0px;
+}
+
+.calculateBlock
+{
+	display: inline-block;
+	
+	margin: 20px;
+	border: 5px solid steelBlue;
+	padding: 10px;
+}
+
+#outputLine 
+{
+	display:inline-block;
+	
+	width: 390px;
+	height: 70px;
+
+	overflow: auto;
+
+	border: 1px solid black;
+}
+
+#firstNum, #operation, #secondNum 
+{
+	
+	float: right;
+
+	font-size: 35px;
+	margin: 15px 15px 15px 0px;
+}
+
+#operation, #secondNum
+{
+	display: none;
+}
+
+button 
 {
 	width: 100%;
-	margin-top: 0px;
+	height: 100%;
+}
+
+table
+{
+	border-spacing: 10px;
 }
 
 td
 {
-	padding: 0px;
+	width: 70px;
+	height: 70px;
 }
 
 
