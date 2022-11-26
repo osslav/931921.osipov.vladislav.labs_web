@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Task 10</title>
+        <link rel="stylesheet" href="lab.css">
+    </head>
+    <body>
+		<img src="lamp.jpg" id="lamp">
+		
+		<div id="light"></div>
+		
+		<img src="lamp_disperial.png" id="lampDisperial" onmousedown="switchLamp(200, 3, 0.5)" onmouseup="switchLamp(200, -3, 0)">
+		<img src="lamp_rope.png" id="lampRope">
+		
+        <img src="veil.jpg" id="veil" onclick="changeBottom(101, 1000, 'veil')" onmouseover="changeBottom(5, 200, 'veil')" onmouseout="changeBottom(-5, 200, 'veil')">
+
+		<script src="lab.js"></script>
+    </body>
+</html>
