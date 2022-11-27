@@ -1,7 +1,7 @@
 let frameTime = 20;
 
 let objectMoving = false;
-function changeBottom(heightForUp, allTime, idElem)
+function changeBottom(newHeight, allTime, idElem)
 {
 	if (objectMoving)
 		return;
@@ -19,14 +19,18 @@ function changeBottom(heightForUp, allTime, idElem)
 		heightVeilStr.replace('vh', '');
 		heightVeilNum = parseInt(heightVeilStr);
 	}
-	let stepHeight = heightForUp / (allTime / frameTime);
-
+	let heightForUp = newHeight - heightVeilNum;
+	let countFrame = allTime / frameTime;
+	let stepHeight = heightForUp / countFrame;
+	
+	let counterFrame = 0;
 	let timer = setInterval(function() 
 	{
 		heightVeilNum += stepHeight;
  		elem.style.bottom = heightVeilNum + 'vh';
 		
-		if (Date.now() - start > allTime) 
+		counterFrame++;
+		if (counterFrame >= countFrame) 
 		{
 			clearInterval(timer);
 			objectMoving = false;
@@ -34,55 +38,39 @@ function changeBottom(heightForUp, allTime, idElem)
 		}
 	}, frameTime);
 }
-/*
-function changeTop(heightForUp, allTime, idElem)
-{
-	let elem = document.getElementById(idElem);
-	let start = Date.now();
-	
-	let heightElemNum;
-	let heightElemStr = elem.style.top;
-	if (heightElemStr.length == 0)
-		heightElemNum = 0;
-	else
-	{
-		heightElemStr.replace('vh', '');
-		heightElemNum = parseInt(heightElemStr);
-	}
-	let stepHeight = heightForUp / (allTime / frameTime);
 
-	let timer = setInterval(function() 
-	{
-		heightElemNum += stepHeight;
- 		elem.style.top = heightElemNum + 'vh';
-		
-		if (Date.now() - start > allTime) 
-		{
-			clearInterval(timer);
-			return;
-		}
-	}, frameTime);
-}
-*/
 let statusLamp = false;
 function switchLamp(time, ropeHeight, opacityLight)
 {
 	let lampElem = document.getElementById("lampRope");
 	let lightElem = document.getElementById("light");
+	let wizardElem = document.getElementById("wizard");
+	let hatElem = document.getElementById("hat");
+	let thingElem = document.getElementById("thing");
 	
 	let start = Date.now();
 	
 	let countFrame = time / frameTime;
 	let stepHeight = ropeHeight / countFrame;	
 	let stepLight = opacityLight / countFrame;
+	let stepOpacityObject = 0;
+	if (opacityLight != 0)
+		stepOpacityObject = 1 / countFrame;
 	if (statusLamp)
+	{
 		stepLight *= -1;
+		stepOpacityObject *= -1;
+	}
+	
 	
 	let counterFrame = 0;
 	let timer = setInterval(function() 
 	{
  		addTop(lampElem, stepHeight);	
 		addOpacity(lightElem, stepLight);
+		addOpacity(wizardElem, stepOpacityObject);
+		addOpacity(hatElem, stepOpacityObject);
+		addOpacity(thingElem, stepOpacityObject);
 		counterFrame++;
 		
 		if (counterFrame >= countFrame) 
@@ -130,7 +118,7 @@ function trick()
 		return;
 		
 	trickGoingOn = true;
-	changeBottom(-12, 200, 'thing');
+	changeBottom(12, 200, 'thing');
 	
 	setTimeout(function()
 	{
@@ -140,7 +128,7 @@ function trick()
 			document.getElementById('thing').src = "rabbit.png";	
 			
 		isRabbit = !isRabbit;
-		changeBottom(12, 200, 'thing');	
+		changeBottom(25, 200, 'thing');	
 		
 		trickGoingOn = false;
 	}, 300);
