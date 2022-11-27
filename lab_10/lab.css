@@ -19,12 +19,62 @@ body{
 	left: 50%;
 	transform: translate(-50%, 0%);
 	
-	z-index: 999;
+	z-index: 10;
 }
 
 #wizard
 {
 	position: fixed;
+	
+	height: 25vh;
+    width: auto;
+	
+	bottom: 5vh;
+	left: 50%;
+	transform: translate(-100%, 0%);
+	
+	z-index: 1;
+}
+
+#hat
+{
+	position: fixed;
+	
+	height: 16vh;
+    width: auto;
+	
+	bottom: 10vh;
+	left: 50%;
+	transform: translate(-10%, 0%);
+	
+	z-index: 1;
+}
+
+#thing
+{
+	position: fixed;
+	
+	height: 8vh;
+    width: auto;
+	
+	left: 50%;
+	transform: translate(60%, 0%);
+	
+	z-index: 0;
+}
+
+#thingEmpty
+{
+	position: fixed;
+	
+	height: 10vh;
+    width: 12vh;
+	
+	bottom: 25vh;
+	left: 50%;
+	transform: translate(50%, 0%);
+	
+	z-index: 5;
 }
 
 #lamp
@@ -73,17 +123,16 @@ body{
 {
 	position: fixed;
 	
-	height: 0px;
-    width: 0px;
+	height: 10vh;
+    width: 5vh;
 	
 	top: 0px;
 	left: 50%;
 	transform: translate(-50%, -30%);
 	
 	border: 40vh solid transparent; 
-	border-bottom: 80vh solid yellow;
-	opacity: 0;
-	
+	border-bottom: 90vh solid yellow;
+		
 	z-index: 3;
 }
 

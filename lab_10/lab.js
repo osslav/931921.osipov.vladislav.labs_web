@@ -1,16 +1,23 @@
 let frameTime = 20;
 
+let objectMoving = false;
 function changeBottom(heightForUp, allTime, idElem)
 {
+	if (objectMoving)
+		return;
+	objectMoving = true;
+	
 	let elem = document.getElementById(idElem);
 	let start = Date.now();
 	let heightVeilStr = elem.style.bottom;
+	let heightVeilNum;
+	console.log(heightVeilStr);
 	if (heightVeilStr.length == 0)
 		heightVeilNum = 0;
 	else
 	{
 		heightVeilStr.replace('vh', '');
-		let heightVeilNum = parseInt(heightVeilStr);
+		heightVeilNum = parseInt(heightVeilStr);
 	}
 	let stepHeight = heightForUp / (allTime / frameTime);
 
@@ -22,11 +29,12 @@ function changeBottom(heightForUp, allTime, idElem)
 		if (Date.now() - start > allTime) 
 		{
 			clearInterval(timer);
+			objectMoving = false;
 			return;
 		}
 	}, frameTime);
 }
-
+/*
 function changeTop(heightForUp, allTime, idElem)
 {
 	let elem = document.getElementById(idElem);
@@ -55,7 +63,7 @@ function changeTop(heightForUp, allTime, idElem)
 		}
 	}, frameTime);
 }
-
+*/
 let statusLamp = false;
 function switchLamp(time, ropeHeight, opacityLight)
 {
@@ -64,17 +72,20 @@ function switchLamp(time, ropeHeight, opacityLight)
 	
 	let start = Date.now();
 	
-	let stepHeight = ropeHeight / (time / frameTime);	
-	let stepLight = opacityLight / (time / frameTime);
+	let countFrame = time / frameTime;
+	let stepHeight = ropeHeight / countFrame;	
+	let stepLight = opacityLight / countFrame;
 	if (statusLamp)
 		stepLight *= -1;
 	
+	let counterFrame = 0;
 	let timer = setInterval(function() 
 	{
  		addTop(lampElem, stepHeight);	
 		addOpacity(lightElem, stepLight);
+		counterFrame++;
 		
-		if (Date.now() - start > 200) 
+		if (counterFrame >= countFrame) 
 		{
 			clearInterval(timer);
 			return;
@@ -94,6 +105,7 @@ function addOpacity(elem, num)
 		opacityNum = parseFloat(opacityStr);
 	}	
 	opacityNum += num;
+	
 	elem.style.opacity = opacityNum;
 }
 
@@ -110,90 +122,26 @@ function addTop(elem, num)
  	elem.style.top = topNum + 'vh';
 }
 
-/*
-function addNum(newNum)
+let isRabbit = false;
+let trickGoingOn = false;
+function trick()
 {
-	document.getElementById('outputLine').value += newNum;
-	if (currentOperation == '')
+	if (trickGoingOn)
+		return;
+		
+	trickGoingOn = true;
+	changeBottom(-12, 200, 'thing');
+	
+	setTimeout(function()
 	{
-		if (powerNumber == 0)
-			firstNum *= 10;
+		if (isRabbit)
+			document.getElementById('thing').src = "dove.png";
 		else
-		{
-			newNum *= Math.pow(10, powerNumber);
-			powerNumber--;
-		}
-		firstNum += newNum;
-		console.log(firstNum);
-	}
-	else
-	{
-		if (powerNumber == 0)
-			secondNum *= 10;
-		else
-		{
-			newNum *= Math.pow(10, powerNumber);
-			powerNumber--;
-		}
-		secondNum += newNum;
-		console.log(secondNum);
-	}
+			document.getElementById('thing').src = "rabbit.png";	
+			
+		isRabbit = !isRabbit;
+		changeBottom(12, 200, 'thing');	
+		
+		trickGoingOn = false;
+	}, 300);
 }
-
-function addOperation(newOperation)
-{
-	document.getElementById('outputLine').value += ' ' + newOperation + ' ';
-	currentOperation = newOperation;
-	
-	powerNumber = 0;
-}
-
-function backspace()
-{
-	document.getElementById('outputLine').value = document.getElementById('outputLine').value.slice(0, -1);
-	//firstNum = Math.floor(firstNum/10);
-	
-	//console.log(firstNum);
-}
-
-function clearLine()
-{
-	document.getElementById('outputLine').value = '';
-	
-	firstNum = 0;
-	secondNum = 0;
-	powerNumber = 0;
-	currentOperation = '';
-}
-
-function addPoint()
-{
-	document.getElementById('outputLine').value += '.';
-	powerNumber = -1;
-}
-
-function calculate()
-{
-	var answerNum = 0;
-	switch(currentOperation)
-	{
-		case '+':
-		answerNum = firstNum + secondNum;
-		break;
-		case '-':
-		answerNum = firstNum - secondNum;
-		break;
-		case '*':
-		answerNum = firstNum * secondNum;
-		break;
-		case '/':
-		answerNum = firstNum / secondNum;
-		break;
-	}
-	
-	clearLine();
-	document.getElementById('outputLine').value = answerNum;
-	firstNum = answerNum;
-}
-
-*/
