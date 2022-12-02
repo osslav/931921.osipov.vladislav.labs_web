@@ -1,0 +1,25 @@
+﻿@inject ICalcDataService CalcDataService
+@{
+    var calcDataModel = CalcDataService.dataModel;
+}
+
+<h1>AccesServiceDirectly</h1>
+<div class="calculations">
+    <b>
+        Rand Value First: @calcDataModel.firstNum<br>
+        Rand Value Second: @calcDataModel.secondNum<br>
+    </b>
+
+    <b>Add :</b><br>
+    @calcDataModel.firstNum + @calcDataModel.secondNum = @calcDataModel.add<br>
+
+    <b>Sub :</b><br>
+    @calcDataModel.firstNum - @calcDataModel.secondNum = @calcDataModel.sub<br>
+
+    <b>Mult :</b><br>
+    @calcDataModel.firstNum * @calcDataModel.secondNum = @calcDataModel.mult<br>
+
+    <b>Div :</b><br>
+    @calcDataModel.firstNum / @calcDataModel.secondNum = @calcDataModel.div<br>
+</div>
+
