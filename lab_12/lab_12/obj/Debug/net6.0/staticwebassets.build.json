@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "OMOIyV1FBzQAn8VF/mWSX72mlXKdc4byap5XEWmfs4A=",
+  "Source": "lab_12",
+  "BasePath": "_content/lab_12",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "lab_12\\wwwroot",
+      "Source": "lab_12",
+      "ContentRoot": "D:\\931921.osipov.vladislav.labs_web\\lab_12\\lab_12\\wwwroot\\",
+      "BasePath": "_content/lab_12",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\931921.osipov.vladislav.labs_web\\lab_12\\lab_12\\wwwroot\\favicon.ico",
+      "SourceId": "lab_12",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\931921.osipov.vladislav.labs_web\\lab_12\\lab_12\\wwwroot\\",
+      "BasePath": "_content/lab_12",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\931921.osipov.vladislav.labs_web\\lab_12\\lab_12\\wwwroot\\site.css",
+      "SourceId": "lab_12",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\931921.osipov.vladislav.labs_web\\lab_12\\lab_12\\wwwroot\\",
+      "BasePath": "_content/lab_12",
+      "RelativePath": "site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\site.css"
+    }
+  ]
+}

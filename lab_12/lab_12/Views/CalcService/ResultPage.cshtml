@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Result";
+}
+
+<h1>Result</h1>
+<div class="calculations">
+    <div class="resultLine">
+    @if (ViewBag.dataModel.errorEmpty || ViewBag.dataModel.errorDivZero || ViewBag.dataModel.errorUnknown)
+    {
+        @if (ViewBag.dataModel.errorEmpty)
+        {
+            <div>Error! You need enter all numbers</div>
+        }
+
+        @if (ViewBag.dataModel.errorDivZero)
+        {
+            <div>Error! Divide by zero</div>
+        }
+
+        @if (ViewBag.dataModel.errorUnknown)
+        {
+            <div>Unknown error... ¯\_(ツ)_/¯</div>
+        }
+    }
+    else
+    {
+        @if (ViewBag.dataModel.showOperation == false)
+        {
+            <div>@ViewBag.dataModel.resNum</div>
+        }
+        else
+        {
+            <div>@ViewBag.dataModel.firstNum @ViewBag.dataModel.operation @ViewBag.dataModel.secondNum = @ViewBag.dataModel.resNum</div>
+        }
+    }
+    </div>
+</div>
+
