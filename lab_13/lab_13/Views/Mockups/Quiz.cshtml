@@ -1,0 +1,15 @@
+﻿@model TaskModel
+@{
+    ViewData["Title"] = "Quiz";
+}
+
+<h1>Quiz</h1>
+<div class="calculations">
+    <form method='post'>
+        <b>@Model.firstNum @Model.operation @Model.secondNum =</b><br>
+        <input type='number' name='result'><br>
+        <input type='submit' name='action' value='Next'>
+        <input type='submit' name='action' value='Finish'><br>
+    </form>
+</div>
+
